@@ -1,0 +1,15 @@
+<% if Favorite.find_by(book_id: book.id, user_id: current_user.id)%>
+  <li>
+  <%= link_to book_favorites_path(book), method: :delete do %>
+  <i class="fas fa-heart"></i>
+  <%= book.favorites.count %>
+  <% end %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to book_favorites_path(book), method: :post do %>
+  <i class="far fa-heart" ></i>
+  <%= book.favorites.count %>
+  <% end %>
+  </li>
+<% end %>

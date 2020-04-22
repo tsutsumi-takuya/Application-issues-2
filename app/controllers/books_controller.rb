@@ -14,6 +14,7 @@ before_action :authenticate_user!
     @book_new = Book.new
     @favorite = Favorite.new
     @book_comment = BookComment.new
+    @book_comments = @book.book_comments
   end
 
   def new

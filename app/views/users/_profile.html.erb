@@ -6,9 +6,21 @@
 			<th><%= user.name %></th>
 		</tr>
 
+		<% @user ||= current_user %>
+
 		<tr>
 			<th>introduction</th>
 			<th><%= user.introduction %></th>
+		</tr>
+
+		<tr>
+			<th>follows</th>
+			<th><%= link_to @user.following.count %></th>
+		</tr>
+
+		<tr>
+			<th>followers</th>
+			<th><%=link_to @user.followers.count %></th>
 		</tr>
 </table>
 

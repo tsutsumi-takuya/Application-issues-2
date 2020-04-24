@@ -1,0 +1,12 @@
+<% @user ||= current_user %>
+<!-- @userがnilの場合は何もなし、nilの場合current_user -->
+<div class="count">
+	  <strong id="followers" class="stat">
+	  フォロー数 : <%= link_to @user.following.count %>
+	  </strong>
+
+	  <strong id="followers" class="stat">
+	  フォロワー数 : <%=link_to @user.followers.count %>
+	  </strong>
+
+</div>
